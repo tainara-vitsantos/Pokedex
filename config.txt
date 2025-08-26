@@ -1,0 +1,19 @@
+git config --global user.name Tainara Santos
+git config --global user.email tainaravit.santos28@gmail.com
+
+-- baixando o projeto
+dotnet new mvc -o Pokedex
+cd Pokedex
+
+
+
+-- biblioteca colorHilight --
+
+Criando camada de dados para atender o banco.
+Criar as classes para representar as tabelas.
+  <Nullable>disable</Nullable> desabilitar os nulos
+  tirar o ? no erroviewmodels
+  New class na pasta models / Comecando pelo Tipo
+
+  apagar os usings...
+  rgba  / o A varia de 0 a 1, opacidade / 0 e 7
