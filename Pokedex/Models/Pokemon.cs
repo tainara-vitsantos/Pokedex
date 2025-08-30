@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection;
 
@@ -30,8 +30,17 @@ namespace Pokedex.Models;
     [Column(TypeName = "double(5,2)")] // especifica a altura
      public double Altura { get; set; } //doble é um numero grande
 
-      [Required(ErrorMessage = "Informe o peso")]
+    [Required(ErrorMessage = "Informe o peso")]
     [Column(TypeName = "double(7,3)")] // especifica a altura
      public double Peso { get; set; } //doble é um numero grande
 
-    }
+     [StringLength(200)]
+     public string Imagem { get; set; }
+      
+    [StringLength(400)]
+
+    public string  Animacao { get; set; }
+
+    public ICollection<PokemonTipo> Tipos { get; set; }
+
+  }

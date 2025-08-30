@@ -17,3 +17,17 @@ Criar as classes para representar as tabelas.
 
   apagar os usings...
   rgba  / o A varia de 0 a 1, opacidade / 0 e 7
+
+
+  wentent consegue fazer conexão com qualquer banco. 
+
+nuget.org
+entityFRamework.core
+versions 9.0.8
+
+copy dotnet add package Microsoft.EntityFrameworkCore --version 9.0.8
+cd Pokedex
+
+pomelo  Pomelo.EntityFrameworkCore.MySql 
+
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
