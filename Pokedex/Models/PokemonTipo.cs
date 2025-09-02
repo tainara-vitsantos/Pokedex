@@ -8,11 +8,11 @@ namespace Pokedex.Models;
     public class PokemonTipo
     {
         [Key, Column(Order = 1)] // Pq não reconhece duas chaves primarias, então tem que determinar a ordem.
-        public int PokemonNumero { get; set; }
+        public uint PokemonNumero { get; set; }
         [ForeignKey("PokemonNumero")]
         
         [Key, Column(Order  = 2)]
-        public int TipoId { get; set; }
+        public uint TipoId { get; set; }
         [ForeignKey("TipoId")]
 
         public Pokemon Pokemon { get; set; }

@@ -3,7 +3,7 @@ git config --global user.email tainaravit.santos28@gmail.com
 
 -- baixando o projeto
 dotnet new mvc -o Pokedex
-cd Pokedex
+cd Pokedexdotnet
 
 
 
@@ -26,8 +26,16 @@ entityFRamework.core
 versions 9.0.8
 
 copy dotnet add package Microsoft.EntityFrameworkCore --version 9.0.8
+
 cd Pokedex
+dotnet watch run 
+
 
 pomelo  Pomelo.EntityFrameworkCore.MySql 
 
 dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
+
+
+~/ pra rodar no www.root
+asp-action="Index" carregar a pagina
+
