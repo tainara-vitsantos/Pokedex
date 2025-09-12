@@ -20,6 +20,7 @@ namespace Pokedex.Models;
      [ForeignKey("GeneroId")]
      public Genero Genero { get; set; }
 
+     [StringLength(30)]
      [Required(ErrorMessage = "Por favor, informe o nome")]
      public string Nome { get; set; }
 
@@ -42,5 +43,7 @@ namespace Pokedex.Models;
     public string  Animacao { get; set; }
 
     public ICollection<PokemonTipo> Tipos { get; set; }
+
+    public virtual ICollection<PokemonTipo> Tipos { get; set; }
 
   }
