@@ -1,13 +1,13 @@
  using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Reflection;
+
 
 namespace Pokedex.Models;
     [Table("Pokemon")]
     public class Pokemon
     {
        [Key]
-       [DatabaseGenerated(DatabaseGeneratedOption.None)]
+       [DatabaseGenerated(DatabaseGeneratedOption.None)] //Notação para impedir o auto incremento
        public uint  Numero { get; set; }
 
       [Required(ErrorMessage = "Por favor, informe a regiao")]

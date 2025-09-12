@@ -16,3 +16,4 @@ namespace Pokedex.Models;
        public string Nome { get; set; }
 
     }
+    

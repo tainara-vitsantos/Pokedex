@@ -18,3 +18,6 @@ namespace Pokedex.Models;
 
         public ICollection<PokemonTipo> Pokemons { get; set; }
     }
+
+
+   
