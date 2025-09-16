@@ -6,10 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configurando serviço de contexto do banco de dados
-
-var conexao = builder.Configuration.GetConnectionString("Conexao"); // caminho do
-var versao = ServerVersion.AutoDetect(conexao); //versao do banco appsettings.json
+// Configuração do Serviço de Contexto
+var conexao = builder.Configuration.GetConnectionString("Conexao");
+var versao = ServerVersion.AutoDetect(conexao);
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseMySql(conexao, versao)
 );

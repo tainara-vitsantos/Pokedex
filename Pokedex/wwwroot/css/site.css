@@ -6,3 +6,7 @@
     transition: 0.6s;
     z-index: 1000;
 }
+
+.min-w-200 {
+    min-width: 200px;
+}
