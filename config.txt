@@ -39,3 +39,6 @@ dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
 ~/ pra rodar no www.root
 asp-action="Index" carregar a pagina
 
+
+dotnet clean
+dotnet restore
