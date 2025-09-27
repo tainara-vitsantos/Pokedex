@@ -64,3 +64,4 @@ dotnet aspnet-codegenerator controller -name GenerosController --model Genero --
 
 dotnet aspnet-codegenerator controller -name PokemonsController --model Pokemon --dataContext AppDbContext --layout "~/Views/Shared/_LayoutAdmin.cshtml" -outDir Controllers 
 
+ctrl + h seleciona pra mudar tudo na pagina
