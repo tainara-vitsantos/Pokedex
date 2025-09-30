@@ -71,14 +71,30 @@ namespace Pokedex.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Numero,RegiaoId,GeneroId,Nome,Descricao,Altura,Peso,Imagem,Animacao")] Pokemon pokemon, IFormFile Arquivo)
         {
-            if (ModelState.IsValid)
+            ViewData["GeneroId"] = new SelectList(_context.Generos, "Id", "Nome", pokemon.GeneroId);
+            ViewData["RegiaoId"] = new SelectList(_context.Regioes, "Id", "Nome", pokemon.RegiaoId);
+            if (ModelState.IsValid) /* verifica se as regras do pokemon são validas */
             {
+                if (PokemonExists(pokemon.Numero))
+                {
+                    ModelState.AddModelError("", "Número já cadastrado, verifique!");
+                    return View(pokemon);
+                }
+                if(Arquivo != null){
+                    string wwwRootPath = _host.WebRootPath;
+                    string filename = pokemon.Numero.ToString("000") + Path.GetExtension(Arquivo.FileName);
+                    string uploads = Path.Combine(wwwRootPath, @"img\pokemons"); /* // ou @ pra falar que é texto */
+                    string newFile = Path.Combine(uploads, filename);
+                    using(var stream = new FileStream(newFile, FileMode.Create)){
+                        Arquivo.CopyTo(stream);
+                    }
+                    pokemon.Imagem = @"\img\pokemons\" + filename;
+                }
                 _context.Add(pokemon);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GeneroId"] = new SelectList(_context.Generos, "Id", "Nome", pokemon.GeneroId);
-            ViewData["RegiaoId"] = new SelectList(_context.Regioes, "Id", "Nome", pokemon.RegiaoId);
+
             return View(pokemon);
         }
 
